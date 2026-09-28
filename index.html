@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bloom Beauty — салон красоты, онлайн-запись</title>
+  <meta name="description" content="Стрижки, окрашивание, маникюр и уходовые процедуры. Выберите мастера и запишитесь онлайн без звонка." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='20' fill='%23D46A8C'/%3E%3Ccircle cx='32' cy='26' r='9' fill='white' fill-opacity='.9'/%3E%3Cpath d='M18 48c2-9 8-14 14-14s12 5 14 14' stroke='white' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#top" class="logo">Bloom<span class="logo__accent">Beauty</span></a>
+
+      <nav class="nav" id="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a href="#services" class="nav__link">Услуги и цены</a></li>
+          <li><a href="#masters" class="nav__link">Мастера</a></li>
+          <li><a href="#booking" class="nav__link">Онлайн-запись</a></li>
+          <li><a href="#reviews" class="nav__link">Отзывы</a></li>
+        </ul>
+      </nav>
+
+      <div class="header__actions">
+        <a href="#booking" class="btn btn--primary btn--sm">Записаться</a>
+        <button class="icon-btn menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+          <i class="ph ph-list" id="menuIconOpen" aria-hidden="true"></i>
+          <i class="ph ph-x" id="menuIconClose" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero__inner">
+        <div class="hero__content reveal">
+          <span class="badge"><i class="ph ph-sparkle" aria-hidden="true"></i> Топ-салон города по отзывам</span>
+          <h1 class="hero__title">Красота — это <span class="text-accent">забота о себе</span> без спешки</h1>
+          <p class="hero__subtitle">
+            Стрижки, окрашивание, маникюр и уходовые процедуры у мастеров с рейтингом 4.9★.
+            Выбирайте удобное время — запись онлайн за 1 минуту.
+          </p>
+          <div class="hero__actions">
+            <a href="#booking" class="btn btn--primary btn--lg">Записаться онлайн <i class="ph ph-calendar-check" aria-hidden="true"></i></a>
+            <a href="#services" class="btn btn--outline btn--lg">Услуги и цены</a>
+          </div>
+        </div>
+        <div class="hero__visual reveal" style="--reveal-delay:.15s">
+          <div class="hero__card">
+            <div class="hero__card-badge">4.9 ★ <span>Средний рейтинг</span></div>
+            <div class="hero__card-row"><i class="ph ph-scissors" aria-hidden="true"></i> Стрижки и укладки</div>
+            <div class="hero__card-row"><i class="ph ph-paint-brush" aria-hidden="true"></i> Окрашивание</div>
+            <div class="hero__card-row"><i class="ph ph-hand-heart" aria-hidden="true"></i> Маникюр и педикюр</div>
+            <div class="hero__card-row"><i class="ph ph-flower-lotus" aria-hidden="true"></i> Уходовые процедуры</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES & PRICES -->
+    <section class="section" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <p class="section-eyebrow reveal">Услуги и цены</p>
+        <h2 class="section-title reveal" id="services-title">Прайс-лист</h2>
+        <p class="section-subtitle reveal">Полная стоимость — без скрытых доплат.</p>
+        <div class="grid grid--4" id="servicesGrid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- MASTERS -->
+    <section class="section section--alt" id="masters" aria-labelledby="masters-title">
+      <div class="container">
+        <p class="section-eyebrow reveal">Мастера</p>
+        <h2 class="section-title reveal" id="masters-title">Команда салона</h2>
+        <p class="section-subtitle reveal">Каждый мастер специализируется на своей области.</p>
+        <div class="grid grid--3" id="mastersGrid" role="list"></div>
+      </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section class="section" id="booking" aria-labelledby="booking-title">
+      <div class="container">
+        <p class="section-eyebrow reveal">Онлайн-запись</p>
+        <h2 class="section-title reveal" id="booking-title">Запишитесь без звонка</h2>
+        <p class="section-subtitle reveal">Выберите услугу, мастера и свободное время.</p>
+
+        <form class="booking reveal" id="bookingForm" novalidate>
+          <div class="booking__step">
+            <label for="bookService">1. Услуга</label>
+            <select id="bookService" required></select>
+          </div>
+
+          <div class="booking__step">
+            <label for="bookMaster">2. Мастер</label>
+            <select id="bookMaster" required></select>
+          </div>
+
+          <div class="booking__step">
+            <label>3. Свободное время сегодня</label>
+            <div class="slots" id="slotsGrid" role="listbox" aria-label="Свободное время"></div>
+            <input type="hidden" id="bookSlot" required />
+            <span class="form-error" id="slotError" role="alert"></span>
+          </div>
+
+          <div class="booking__summary" id="bookingSummary">
+            <span class="booking__summary-label">Итого к оплате</span>
+            <span class="booking__summary-price" id="bookingPrice">—</span>
+          </div>
+
+          <div class="form-field">
+            <label for="clientName">Ваше имя</label>
+            <input type="text" id="clientName" required />
+            <span class="form-error" id="clientNameError" role="alert"></span>
+          </div>
+          <div class="form-field">
+            <label for="clientPhone">Телефон</label>
+            <input type="tel" id="clientPhone" placeholder="+7 (___) ___-__-__" required />
+            <span class="form-error" id="clientPhoneError" role="alert"></span>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">Подтвердить запись <i class="ph ph-check-circle" aria-hidden="true"></i></button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section section--alt" id="reviews" aria-labelledby="reviews-title">
+      <div class="container">
+        <p class="section-eyebrow reveal">Отзывы</p>
+        <h2 class="section-title reveal" id="reviews-title">Нам доверяют</h2>
+        <div class="grid grid--3" id="reviewsGrid" role="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Bloom Beauty. Салон красоты.</p>
+      <button class="back-to-top" id="backToTop" type="button" aria-label="Наверх"><i class="ph ph-arrow-up" aria-hidden="true"></i></button>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1" defer></script>
+  <script src="js/script.js" defer></script>
+</body>
+</html>
