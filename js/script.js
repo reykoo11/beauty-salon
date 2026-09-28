@@ -8,9 +8,9 @@ const SERVICES = [
 ];
 
 const MASTERS = [
-  { name: "Алина", role: "Стилист-парикмахер", tags: ["Стрижки", "Укладки", "Окрашивание"] },
-  { name: "Марина", role: "Колорист", tags: ["Балаяж", "Омбре", "Тонирование"] },
-  { name: "Ольга", role: "Мастер маникюра", tags: ["Гель-лак", "Дизайн", "Укрепление"] },
+  { name: "Алина", role: "Стилист-парикмахер", tags: ["Стрижки", "Укладки", "Окрашивание"], photo: "assets/master-1.jpg" },
+  { name: "Марина", role: "Колорист", tags: ["Балаяж", "Омбре", "Тонирование"], photo: "assets/master-2.jpg" },
+  { name: "Ольга", role: "Мастер маникюра", tags: ["Гель-лак", "Дизайн", "Укрепление"], photo: "assets/master-3.jpg" },
 ];
 
 const REVIEWS = [
@@ -49,7 +49,7 @@ function renderServices() {
 function renderMasters() {
   renderList("mastersGrid", MASTERS, (m, i) => `
     <div class="master-card reveal" role="listitem" style="--reveal-delay:${i * 0.08}s">
-      <div class="master-card__avatar">${m.name[0]}</div>
+      <div class="master-card__avatar"><img src="${m.photo}" alt="${m.name}" loading="lazy" /></div>
       <h3 class="master-card__name">${m.name}</h3>
       <p class="master-card__role">${m.role}</p>
       <div class="master-card__tags">${m.tags.map((t) => `<span class="tag">${t}</span>`).join("")}</div>
